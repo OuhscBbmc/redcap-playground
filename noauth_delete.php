@@ -1,10 +1,15 @@
 <?php
 /**
- * PLUGIN NAME: Name Of The Plugin
- * DESCRIPTION: A brief description of the Plugin.
- * VERSION: The Plugin's Version Number, e.g.: 1.0
- * AUTHOR: Name Of The Plugin Author
+ * PLUGIN NAME: Insert Unit Test Cleanup
+ * DESCRIPTION: delete redcap record inserted by a REDCapR unit test
+ * VERSION: 1.0
+ * AUTHOR: Will Beasley, OUHSC, BBMC
  */
+
+// Prevent caching; this code is copied from /redcap/api/index.php
+header("Expires: 0");
+header("cache-control: no-store, no-cache, must-revalidate"); 
+header("Pragma: no-cache");
 
 // Disable REDCap's authentication
 define("NOAUTH", true);
@@ -34,6 +39,4 @@ db_query("DELETE FROM redcap.redcap_data WHERE project_id=12 and record=5;");
 
 // OPTIONAL: Display the footer
 $HtmlPage->PrintFooterExt();
-
-//DELETE FROM redcap.redcap_data WHERE project_id=12 and record=2;
 ?>
