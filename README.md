@@ -1,4 +1,4 @@
-redcap_plugin_playground
+redcap-playground
 ========================
 
-Experimental plugins for REDCap (http://www.project-redcap.org/)
+Experimental plugins & hooks for REDCap (http://www.project-redcap.org/)
